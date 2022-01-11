@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1937885033902952209}
+  - component: {fileID: 3748254697572109080}
   - component: {fileID: 1937885033902952220}
   - component: {fileID: 1937885033902952223}
   - component: {fileID: 1937885033902952222}
   m_Layer: 0
-  m_Name: Avatar
+  m_Name: Avatar-Template
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3748254697572109080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937885033902952208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9ae8017de6b4a4dbec707082695e50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouv: {fileID: 1937885033902952222}
 --- !u!50 &1937885033902952220
 Rigidbody2D:
   serializedVersion: 4
@@ -105,6 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937885034376106756}
   - component: {fileID: 1937885034376106757}
+  - component: {fileID: 3299354487223865703}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -167,8 +182,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8344965988833789715, guid: 2a70910b981f4cc48baf85998af9ba4b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -6017391370794955116, guid: 2a70910b981f4cc48baf85998af9ba4b, type: 3}
+  m_Color: {r: 0.20425417, g: 0.8490566, b: 0.21626516, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,3 +193,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3299354487223865703
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937885034376106759}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
