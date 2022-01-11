@@ -1,12 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Core.GameInput;
 
-public class PlayerController : MonoBehaviour
+[System.Serializable]
+public class TransformEvent : UnityEvent<Transform> { }
+
+public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private InputHandler input;
+
+    public TransformEvent onBodyChange;
     [SerializeField] private AvatarBody actualBody;
+    [Space(10)]
+    [SerializeField] private GameObject bodyTemplate;
+
+    public AvatarBody ActualBody
+    {
+        get { return actualBody; }
+        set 
+        { 
+            actualBody = value;
+            onBodyChange?.Invoke(actualBody.transform);
+        }
+    }
 
     void Start()
     {
@@ -20,5 +38,11 @@ public class PlayerController : MonoBehaviour
         {
             actualBody.mouv.mouvDir = input.StickMagnitude > inputThreshold ? input.StickDir : Vector2.zero;
         }
+    }
+
+    public void NewPerso()
+    {
+        GameObject go = Instantiate(bodyTemplate, Vector3.zero, Quaternion.identity, transform);
+        ActualBody = go.GetComponent<AvatarBody>();
     }
 }
