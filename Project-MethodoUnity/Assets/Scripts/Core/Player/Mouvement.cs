@@ -34,18 +34,17 @@ public class Mouvement : MonoBehaviour, IKickable
         rb.velocity = Vector2.zero;
     }
 
+
     [ContextMenu("kick right")]
     public void Kicking()
     {
         GetKicked(Vector2.right, 200f);
     }
-
     public void GetKicked(Vector2 dir, float power)
     {
         StopAllCoroutines();
         StartCoroutine(Kicked(dir, power));
     }
-
     public IEnumerator Kicked(Vector2 dir, float power)
     {
         do
