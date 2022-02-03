@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HouseBehavior : MonoBehaviour
 {
-    List<Transform> mouvPoint;
+    public List<Transform> mouvPoint;
 
     void Start()
     {
@@ -14,5 +14,9 @@ public class HouseBehavior : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Retour à la Maion");
     }
 }
