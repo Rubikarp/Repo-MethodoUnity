@@ -15,6 +15,10 @@ public class Mouvement : MonoBehaviour, IKickable
     [Header("data received")]
     public Vector2 mouvDir = Vector2.zero;
 
+    [Header("Réferences")]
+    [SerializeField] private Animator selfAnimator;
+    [SerializeField] private SpriteRenderer selfSpriteRenderer;
+
     private void Awake()
     {
         self = transform;
@@ -25,6 +29,12 @@ public class Mouvement : MonoBehaviour, IKickable
     public void ReactToInput()
     {
         rb.velocity = mouvDir * speed * Time.deltaTime;
+
+        selfAnimator.SetBool("IsRunning", rb.velocity.magnitude > 0.1f);
+        selfSpriteRenderer.flipX = rb.velocity.x > 0.1 ? false : selfSpriteRenderer.flipX;
+        selfSpriteRenderer.flipX = rb.velocity.x < -0.1 ? true : selfSpriteRenderer.flipX;
+
+
     }
 
     public void Stop()
@@ -32,8 +42,9 @@ public class Mouvement : MonoBehaviour, IKickable
         speed = 0;
         mouvDir = Vector2.zero;
         rb.velocity = Vector2.zero;
+        selfAnimator.SetTrigger("IsDie");
+        selfAnimator.SetBool("IsDing", true);
     }
-
 
     [ContextMenu("kick right")]
     public void Kicking()

@@ -10,8 +10,12 @@ public class HighKick : MonoBehaviour
     [Space(10)]
     public float power = 200f;
 
+    [Header("Références")]
+    [SerializeField] private Animator selfRenderer;
+
     public void DoKick(Vector2 kickDir)
     {
+        selfRenderer.SetTrigger("IsKicking");
         Collider2D[] collidersHit = Physics2D.OverlapCircleAll((Vector2)transform.position + kickDir * range, size);
         if(collidersHit.Length > 0)
         {
