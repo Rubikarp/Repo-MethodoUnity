@@ -8,9 +8,7 @@ public class AvatarBody : MonoBehaviour
     public bool Alive 
     {
         get { return _alive; }
-        set { Alive = value;
-            if(value == false)Die();
-        }
+        set { _alive = value; }
     }
     public Mouvement mouv;
     public HighKick kick;
