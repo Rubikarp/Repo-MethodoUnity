@@ -47,8 +47,9 @@ public class KickBody : MonoBehaviour
 
         rb.velocity = Vector2.zero;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2.Reflect(kickDir, collision.contacts[0].normal);
+        kickDir = Vector2.Reflect(kickDir, collision.contacts[0].normal);
     }
 }

@@ -18,10 +18,7 @@ public class FixedScreenCamera : MonoBehaviour
     {
         PlayerController.Instance.onBodyChange.AddListener(ChangeTarget);
     }
-    private void OnDisable()
-    {
-        PlayerController.Instance.onBodyChange.RemoveListener(ChangeTarget);
-    }
+
 
     public void ChangeTarget(Transform newTarget)
     {
