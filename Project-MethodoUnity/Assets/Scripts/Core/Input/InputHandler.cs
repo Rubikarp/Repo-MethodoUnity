@@ -11,13 +11,14 @@ namespace Core.GameInput
         public InputMap_SCO inputMap;
 
         //[Header("Stick data")]
+        public Vector2 StickLastDir;
         public Vector2 StickDir
         {
-            get { return inputMap.StickDir; }
+            get {return inputMap.StickDir; }
         }
         public Vector2 StickValue
         {
-            get { return inputMap.StickValue; }
+            get {return inputMap.StickValue; }
         }
         public float StickMagnitude
         {

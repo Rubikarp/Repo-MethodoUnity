@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AvatarBody : MonoBehaviour
 {
-    private bool _alive;
+    [SerializeField] private bool _alive = true;
     public bool Alive 
     {
         get { return _alive; }
@@ -13,10 +13,14 @@ public class AvatarBody : MonoBehaviour
         }
     }
     public Mouvement mouv;
+    public HighKick kick;
 
     private void FixedUpdate()
     {
-        
+        if (Alive)
+        {
+            mouv.ReactToInput();
+        }
     }
 
     public void Die()

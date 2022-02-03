@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1937885033902952220}
   - component: {fileID: 1937885033902952223}
   - component: {fileID: 1937885033902952222}
+  - component: {fileID: 2716984272232484220}
   m_Layer: 0
   m_Name: Avatar-Template
   m_TagString: Untagged
@@ -47,7 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a9ae8017de6b4a4dbec707082695e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _alive: 1
   mouv: {fileID: 1937885033902952222}
+  kick: {fileID: 2716984272232484220}
 --- !u!50 &1937885033902952220
 Rigidbody2D:
   serializedVersion: 4
@@ -109,6 +112,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 200
   mouvDir: {x: 0, y: 0}
+--- !u!114 &2716984272232484220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937885033902952208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f043c660d0a97b46828e9f8e2f3a750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 1.5
+  size: 0.75
+  power: 200
+  dir: {x: 1, y: 1, z: 0}
 --- !u!1 &1937885034376106759
 GameObject:
   m_ObjectHideFlags: 0
