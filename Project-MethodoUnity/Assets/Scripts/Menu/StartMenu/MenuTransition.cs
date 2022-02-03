@@ -16,13 +16,13 @@ public class MenuTransition : MonoBehaviour
     {
         if (down)
         {
-            Vector3 endPosition = -new Vector3(0, Mathf.Abs(cameraMenu.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y * 2), 0);
+            Vector3 endPosition = -new Vector3(0, Camera.main.orthographicSize * 2.0f, 0);
             Debug.Log(endPosition);
             StartCoroutine(transitionToManager(endPosition));
         }
         else
         {
-            Vector3 endPosition = new Vector3(0, Mathf.Abs(cameraMenu.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y * 2), 0);
+            Vector3 endPosition = new Vector3(0, Camera.main.orthographicSize * 2.0f, 0);
             Debug.Log(endPosition);
             StartCoroutine(transitionToManager(endPosition));
         }
@@ -49,6 +49,5 @@ public class MenuTransition : MonoBehaviour
         }
         yield return new WaitForEndOfFrame();
     }
-
 
 }

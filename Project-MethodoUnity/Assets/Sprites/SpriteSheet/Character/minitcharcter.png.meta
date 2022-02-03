@@ -29,6 +29,18 @@ TextureImporter:
   - first:
       213: -8054567405260791574
     second: minitcharcter_8
+  - first:
+      213: 7031490132942976711
+    second: minitcharcter_9
+  - first:
+      213: -2016626834063036788
+    second: minitcharcter_10
+  - first:
+      213: 4761866340118386259
+    second: minitcharcter_11
+  - first:
+      213: 3248434714577079036
+    second: minitcharcter_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -302,6 +314,90 @@ TextureImporter:
       bones: []
       spriteID: ae0adfdae9d683090800000000000000
       internalID: -8054567405260791574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minitcharcter_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6fabf750fd49160800000000000000
+      internalID: 7031490132942976711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minitcharcter_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ee62734908304e0800000000000000
+      internalID: -2016626834063036788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minitcharcter_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35655a6f43c851240800000000000000
+      internalID: 4761866340118386259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minitcharcter_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa0a667922c41d20800000000000000
+      internalID: 3248434714577079036
       vertices: []
       indices: 
       edges: []

@@ -21,6 +21,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject mainCanvasMenu;
 
+    [SerializeField]
+    private GameObject OnFullScreen;
+    [SerializeField]
+    private GameObject OffFullScreen;
 
     private sceneEnum chooseScene;
 
@@ -54,6 +58,7 @@ public class MenuManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     menuTransition.TransitionToUpDowwn(false);
+                    chooseScene = sceneEnum.mainMenu;
                 }
                 break;
             default:
@@ -64,12 +69,22 @@ public class MenuManager : MonoBehaviour
 
     public void SetFullScreen()
     {
-
+        Screen.fullScreen = !Screen.fullScreen;
+        if (Screen.fullScreen)
+        {
+            OnFullScreen.SetActive(true);
+            OffFullScreen.SetActive(false);
+        }
+        else
+        {
+            OnFullScreen.SetActive(false);
+            OffFullScreen.SetActive(true);
+        }
     }
 
     public void SetResolution()
     {
-
+        Screen.SetResolution(640, 480, Screen.fullScreen);
     }
 
      
