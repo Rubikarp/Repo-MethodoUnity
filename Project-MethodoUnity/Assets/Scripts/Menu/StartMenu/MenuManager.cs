@@ -7,7 +7,8 @@ public class MenuManager : MonoBehaviour
     public enum sceneEnum
     {
         startMenu,
-        mainMenu
+        mainMenu,
+        settings
     }
 
     [Header("Script Références")]
@@ -30,7 +31,8 @@ public class MenuManager : MonoBehaviour
 
     public void OnPressedSettings()
     {
-
+        menuTransition.TransitionToUpDowwn(true);
+        chooseScene = sceneEnum.settings;
     }
 
     // Update is called once per frame
@@ -42,15 +44,33 @@ public class MenuManager : MonoBehaviour
                 if (Input.anyKey)
                 {
                     chooseScene = sceneEnum.mainMenu;
-                    menuTransition.TransitionToMenu(true);
+                    menuTransition.TransitionToUpDowwn(true);
                 }
                 break;
             case sceneEnum.mainMenu:
 
+                break;
+            case sceneEnum.settings:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    menuTransition.TransitionToUpDowwn(false);
+                }
                 break;
             default:
                 break;
         }
 
     }
+
+    public void SetFullScreen()
+    {
+
+    }
+
+    public void SetResolution()
+    {
+
+    }
+
+     
 }
