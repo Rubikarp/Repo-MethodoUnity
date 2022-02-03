@@ -42,6 +42,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public void NewPerso()
     {
+        ActualBody.Die();
         GameObject go = Instantiate(bodyTemplate, Vector3.zero, Quaternion.identity, transform);
         ActualBody = go.GetComponent<AvatarBody>();
     }

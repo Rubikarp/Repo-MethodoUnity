@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e724b9e98dfcce54591fbbd01cb484c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopDur: {x: 0, y: 5}
+  loopDur: {x: 0, y: 30}
   restingTime: 0
   EndTime:
     m_PersistentCalls:
@@ -57128,7 +57128,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824064402}
   m_BodyType: 2
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1

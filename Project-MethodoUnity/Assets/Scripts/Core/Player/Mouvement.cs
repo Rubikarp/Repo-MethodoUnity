@@ -22,9 +22,15 @@ public class Mouvement : MonoBehaviour
         coll = self.GetComponent<BoxCollider2D>();
     }
 
-    private void FixedUpdate()
+    private void Move()
     {
         rb.velocity = mouvDir * speed * Time.deltaTime;
     }
 
+    public void Stop()
+    {
+        speed = 0;
+        mouvDir = Vector2.zero;
+        rb.velocity = Vector2.zero;
+    }
 }
