@@ -7,7 +7,8 @@ public class MenuManager : MonoBehaviour
     public enum sceneEnum
     {
         startMenu,
-        mainMenu
+        mainMenu,
+        settings
     }
 
     [Header("Script Références")]
@@ -20,6 +21,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject mainCanvasMenu;
 
+    [SerializeField]
+    private GameObject OnFullScreen;
+    [SerializeField]
+    private GameObject OffFullScreen;
 
     private sceneEnum chooseScene;
 
@@ -30,7 +35,8 @@ public class MenuManager : MonoBehaviour
 
     public void OnPressedSettings()
     {
-
+        menuTransition.TransitionToUpDowwn(true);
+        chooseScene = sceneEnum.settings;
     }
 
     // Update is called once per frame
@@ -42,15 +48,44 @@ public class MenuManager : MonoBehaviour
                 if (Input.anyKey)
                 {
                     chooseScene = sceneEnum.mainMenu;
-                    menuTransition.TransitionToMenu(true);
+                    menuTransition.TransitionToUpDowwn(true);
                 }
                 break;
             case sceneEnum.mainMenu:
 
+                break;
+            case sceneEnum.settings:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    menuTransition.TransitionToUpDowwn(false);
+                    chooseScene = sceneEnum.mainMenu;
+                }
                 break;
             default:
                 break;
         }
 
     }
+
+    public void SetFullScreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+        if (Screen.fullScreen)
+        {
+            OnFullScreen.SetActive(true);
+            OffFullScreen.SetActive(false);
+        }
+        else
+        {
+            OnFullScreen.SetActive(false);
+            OffFullScreen.SetActive(true);
+        }
+    }
+
+    public void SetResolution()
+    {
+        Screen.SetResolution(640, 480, Screen.fullScreen);
+    }
+
+     
 }
