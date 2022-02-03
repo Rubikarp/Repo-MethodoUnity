@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
 public class Mouvement : MonoBehaviour, IKickable
 {
     private Transform self;
     private Rigidbody2D rb;
-    private BoxCollider2D coll;
+    private CircleCollider2D coll;
 
     [Header("Parameter")]
     [SerializeField] private float speed = 200.0f;
@@ -19,7 +19,7 @@ public class Mouvement : MonoBehaviour, IKickable
     {
         self = transform;
         rb = self.GetComponent<Rigidbody2D>();
-        coll = self.GetComponent<BoxCollider2D>();
+        coll = self.GetComponent<CircleCollider2D>();
     }
 
     public void ReactToInput()
