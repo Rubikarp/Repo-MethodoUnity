@@ -18,10 +18,24 @@ public class MenuTransition : MonoBehaviour
     }
 
 
-    public void TransitionTo()
+    public void TransitionToMenu(bool down)
     {
-        Vector3 endPosition = cameraMenu.transform.position - new Vector3(0, cameraMenu.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y*2, 0);
-        Debug.Log(cameraMenu.pixelRect.size.y);
+        if (down)
+        {
+            Vector3 endPosition = cameraMenu.transform.position - new Vector3(0, cameraMenu.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y * 2, 0);
+            StartCoroutine(transitionToManager(endPosition));
+        }
+        else
+        {
+            Vector3 endPosition = cameraMenu.transform.position + new Vector3(0, cameraMenu.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y * 2, 0);
+            StartCoroutine(transitionToManager(endPosition));
+        }
+
+    }
+
+    public void TransitionToSettings()
+    {
+        Vector3 endPosition = cameraMenu.transform.position - new Vector3(0, cameraMenu.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height)).y * 2, 0);
         StartCoroutine(transitionToManager(endPosition));
     }
 
