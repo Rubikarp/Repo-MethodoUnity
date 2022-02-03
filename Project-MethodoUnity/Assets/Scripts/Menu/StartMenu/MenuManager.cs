@@ -28,6 +28,11 @@ public class MenuManager : MonoBehaviour
         chooseScene = sceneEnum.startMenu;
     }
 
+    public void OnPressedSettings()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +42,7 @@ public class MenuManager : MonoBehaviour
                 if (Input.anyKey)
                 {
                     chooseScene = sceneEnum.mainMenu;
-                    menuTransition.TransitionTo();
+                    menuTransition.TransitionToMenu(true);
                 }
                 break;
             case sceneEnum.mainMenu:
