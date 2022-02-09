@@ -39,7 +39,6 @@ public class Mouvement : MonoBehaviour, IKickable
             selfSpriteRenderer.flipX = rb.velocity.x > 0.1 ? false : selfSpriteRenderer.flipX;
             selfSpriteRenderer.flipX = rb.velocity.x < -0.1 ? true : selfSpriteRenderer.flipX;
         }
-
     }
 
     public void Stop()
@@ -63,14 +62,7 @@ public class Mouvement : MonoBehaviour, IKickable
     }
     public IEnumerator Kicked(Vector2 dir, float power)
     {
-        do
-        {
-            power -= Time.fixedDeltaTime * 250f;
-            rb.velocity = dir * power * Time.fixedDeltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-        while (rb.velocity.magnitude > 0.05f);
-
-        rb.velocity = Vector2.zero;
+        yield return null;
+        rb.velocity = dir * power * Time.fixedDeltaTime;
     }
 }

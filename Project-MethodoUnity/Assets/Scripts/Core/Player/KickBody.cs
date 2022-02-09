@@ -35,15 +35,8 @@ public class KickBody : MonoBehaviour, IKickable
     }
     public IEnumerator Kicked(float power)
     {
-        do
-        {
-            power -= Time.fixedDeltaTime * 250f;
-            rb.velocity = kickDir * power * Time.fixedDeltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-        while (rb.velocity.magnitude > 0.05f);
-
-        rb.velocity = Vector2.zero;
+        yield return null;
+        rb.velocity = kickDir * power * Time.fixedDeltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -150,7 +150,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -206,7 +206,10 @@ MonoBehaviour:
   range: 1.5
   size: 0.75
   power: 500
+  cooldDown: 0.2
+  can: 1
   selfRenderer: {fileID: 3299354487223865703}
+  sound: {fileID: 1029751216844580104}
 --- !u!82 &1029751216844580104
 AudioSource:
   m_ObjectHideFlags: 0

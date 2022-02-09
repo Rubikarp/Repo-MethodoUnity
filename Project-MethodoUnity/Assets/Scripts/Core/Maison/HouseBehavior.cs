@@ -10,7 +10,7 @@ public class HouseBehavior : MonoBehaviour, IKickable
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         self.DOMove(mouvPoint[0].position, 2f);
     }
 
