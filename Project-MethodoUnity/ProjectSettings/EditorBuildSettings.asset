@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameKarp.unity
     guid: 4985212d52c2a754bad43eb49f39cbcc
   - enabled: 1
+    path: Assets/Scenes/Ui/MainMenu.unity
+    guid: 08958991d56b49f45acb3d9f9686ce6f
+  - enabled: 1
     path: Assets/Scenes/Maison.unity
     guid: 8cf59de4adc43f740a2d8ca98296143a
   m_configObjects: {}

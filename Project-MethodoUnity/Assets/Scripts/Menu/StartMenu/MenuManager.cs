@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -28,9 +30,27 @@ public class MenuManager : MonoBehaviour
 
     private sceneEnum chooseScene;
 
+    [SerializeField]
+    private Text textVolume;
+
+    private bool isFullScreen = false;
+
     void Start()
     {
         chooseScene = sceneEnum.startMenu;
+        isFullScreen = Screen.fullScreen;
+
+        Screen.fullScreen = isFullScreen;
+        if (isFullScreen)
+        {
+            OnFullScreen.SetActive(true);
+            OffFullScreen.SetActive(false);
+        }
+        else
+        {
+            OnFullScreen.SetActive(false);
+            OffFullScreen.SetActive(true);
+        }
     }
 
     public void OnPressedSettings()
@@ -69,8 +89,9 @@ public class MenuManager : MonoBehaviour
 
     public void SetFullScreen()
     {
-        Screen.fullScreen = !Screen.fullScreen;
-        if (Screen.fullScreen)
+        isFullScreen = !isFullScreen;
+        Screen.fullScreen = isFullScreen;
+        if (isFullScreen)
         {
             OnFullScreen.SetActive(true);
             OffFullScreen.SetActive(false);
@@ -87,5 +108,19 @@ public class MenuManager : MonoBehaviour
         Screen.SetResolution(640, 480, Screen.fullScreen);
     }
 
+    public void AddVolume()
+    {
+
+    }
+
+    public void ReduceVolume()
+    {
+
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Maison");
+    }
      
 }
