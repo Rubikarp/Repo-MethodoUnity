@@ -166,4 +166,9 @@ public class MenuManager : MonoBehaviour
         menuTransition.TransitionToUpDowwn(false);
         chooseScene = sceneEnum.mainMenu;
     }
+
+    public void OnPressedQuit()
+    {
+        Application.Quit();
+    }
 }
