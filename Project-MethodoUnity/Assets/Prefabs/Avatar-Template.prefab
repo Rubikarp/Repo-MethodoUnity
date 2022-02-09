@@ -105,6 +105,7 @@ MonoBehaviour:
   mouvDir: {x: 0, y: 0}
   selfAnimator: {fileID: 3299354487223865703}
   selfSpriteRenderer: {fileID: 1937885034376106757}
+  isBreaking: 0
 --- !u!114 &2716984272232484220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +121,7 @@ MonoBehaviour:
   range: 1.5
   size: 0.75
   power: 200
+  selfRenderer: {fileID: 3299354487223865703}
 --- !u!82 &1029751216844580104
 AudioSource:
   m_ObjectHideFlags: 0
