@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameLoop : MonoBehaviour
+public class GameLoop : Singleton<GameLoop>
 {
     [Header("Parameter")]
     [SerializeField, Tooltip("x = min / y = sec")] public Vector2Int loopDur;
@@ -29,7 +29,7 @@ public class GameLoop : MonoBehaviour
     {
         if (Input.GetButtonDown("Suicide"))
         {
-            EndTime?.Invoke();
+            StartCoroutine(Death());
             restingTime = ComputDur(loopDur);
         }
 
@@ -41,9 +41,17 @@ public class GameLoop : MonoBehaviour
             }
             else
             {
-                EndTime?.Invoke();
                 restingTime = ComputDur(loopDur);
+                StartCoroutine(Death());
             }
         }
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSecondsRealtime(0.3f);
+        EndTime?.Invoke();
+        restingTime = ComputDur(loopDur);
+
     }
 }

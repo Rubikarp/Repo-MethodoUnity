@@ -101,8 +101,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDrag: 0
+  m_Mass: 1
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -184,10 +184,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectCircle: {fileID: 4736024290941117516}
   body: {fileID: 4736024290941117507}
+  selfRenderer: {fileID: 4736024290941117506}
   busy: 0
   stun: 0
   cooldown: 0.1
   attackSpeed: 500
+  selfAnimator: {fileID: 4641913937423915772}
 --- !u!95 &4641913937423915772
 Animator:
   serializedVersion: 3

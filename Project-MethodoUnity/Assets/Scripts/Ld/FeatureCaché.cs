@@ -8,7 +8,7 @@ public class FeatureCaché : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("tkt"))
+        if (/*Input.GetButton("tkt")*/false)
         {
             StartCoroutine(Dash(mouv.mouvDir, 800));
         }

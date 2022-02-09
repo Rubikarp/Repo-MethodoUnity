@@ -11,7 +11,8 @@ public class UiTime : MonoBehaviour
 
     private void Update()
     {
-        int leftTimeInt = (int)levelLoop.restingTime;
+        if (levelLoop != null) { int leftTimeInt = (int)levelLoop.restingTime; 
         timeText.text = leftTimeInt.ToString();
+        }
     }
 }

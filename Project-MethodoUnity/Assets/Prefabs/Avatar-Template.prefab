@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1937885033902952220}
   - component: {fileID: 5304590788521928687}
   - component: {fileID: 1937885033902952222}
+  - component: {fileID: 1566814967989429455}
   - component: {fileID: 2716984272232484220}
   - component: {fileID: 1029751216844580104}
   m_Layer: 0
@@ -173,7 +174,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!114 &1937885033902952222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,11 +187,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fd103fabf912b4ea98096f96a374a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   speed: 200
   mouvDir: {x: 0, y: 0}
   selfAnimator: {fileID: 3299354487223865703}
   selfSpriteRenderer: {fileID: 1937885034376106757}
   isBreaking: 0
+--- !u!114 &1566814967989429455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937885033902952208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08582bc0355ba4f4eb08089afafb64e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouv: {fileID: 1937885033902952222}
 --- !u!114 &2716984272232484220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 1.5
   size: 0.75
-  power: 500
+  power: 1500
   cooldDown: 0.2
   can: 1
   selfRenderer: {fileID: 3299354487223865703}
@@ -219,7 +234,7 @@ AudioSource:
   m_GameObject: {fileID: 1937885033902952208}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 3fc4915f3819b7d4b8f5a0b24d4bba40, type: 2}
   m_audioClip: {fileID: 8300000, guid: dd024fef35a6d6342a4a44e244e5b3a2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1

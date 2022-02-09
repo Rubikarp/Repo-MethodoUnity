@@ -19,13 +19,11 @@ public class PauseMenu : MonoBehaviour
 
     private KeyCode openMenuKey = KeyCode.Escape;
 
-    // Start is called before the first frame update
     void Start()
     {
         pauseMenu.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(openMenuKey))
@@ -37,13 +35,15 @@ public class PauseMenu : MonoBehaviour
     public void OpenMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
-        gameLoop.isBreaking = pauseMenu.activeSelf;
+        if(gameLoop!=null)gameLoop.isBreaking = pauseMenu.activeSelf;
         ctrlPlayer.ActualBody.mouv.isBreaking = pauseMenu.activeSelf;
     }
 
     public void ExitToMenu()
     {
+        Debug.Log("exit");
         SceneManager.LoadScene("MainMenu");
+        Application.Quit();
     }
 
     public void BackToGame()
