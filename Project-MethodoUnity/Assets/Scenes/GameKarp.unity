@@ -335,7 +335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &273343683
 GameObject:
@@ -76454,6 +76454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Taureau
       objectReference: {fileID: 0}
+    - target: {fileID: 4736024290941117513, guid: 96fbbfd859c70904aaad790d1c65e86a, type: 3}
+      propertyPath: selfAnimator
+      value: 
+      objectReference: {fileID: 4641913937423915772}
     - target: {fileID: 4736024290941117519, guid: 96fbbfd859c70904aaad790d1c65e86a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -76500,3 +76504,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96fbbfd859c70904aaad790d1c65e86a, type: 3}
+--- !u!95 &4641913937423915772 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4641913937423915772, guid: 96fbbfd859c70904aaad790d1c65e86a, type: 3}
+  m_PrefabInstance: {fileID: 4641913937423915770}
+  m_PrefabAsset: {fileID: 0}

@@ -10,6 +10,8 @@ public class TaureauIA : CoreIa
     public float cooldown = 0.1f;
     public float attackSpeed = 2f;
 
+    public Animator selfAnimator;
+
     public override void PlayerDetected(Transform player)
     {
         if (busy || stun) return;
@@ -40,8 +42,19 @@ public class TaureauIA : CoreIa
     IEnumerator Behavior(Transform player)
     {
         Vector3 dir = player.position - transform.position;
+
+        if(dir.x > 0)
+        {
+            selfRenderer.flipX = false;
+        }
+        else
+        {
+            selfRenderer.flipX = true;
+        }
+
         dir = dir.normalized;
         busy = true;
+        selfAnimator.SetBool("Charge", true);
         yield return new WaitForSeconds(0.3f);
 
         do
@@ -54,5 +67,6 @@ public class TaureauIA : CoreIa
         body.velocity = Vector2.zero;
         yield return new WaitForSeconds(cooldown);
         stun = false;
+        selfAnimator.SetBool("Charge", false);
     }
 }

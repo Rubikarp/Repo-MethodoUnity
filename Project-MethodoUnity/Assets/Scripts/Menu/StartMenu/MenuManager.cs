@@ -33,6 +33,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Text textVolume;
 
+    [SerializeField]
+    private Text textResolution;
+    private int resolutionChoosen;
+
+    public Resolution[] allResolutions;
+
     private bool isFullScreen = false;
 
     void Start()
@@ -51,6 +57,9 @@ public class MenuManager : MonoBehaviour
             OnFullScreen.SetActive(false);
             OffFullScreen.SetActive(true);
         }
+
+        allResolutions = Screen.resolutions;
+        textResolution.text = Screen.currentResolution.width.ToString() + "*" + Screen.currentResolution.height.ToString();
     }
 
     public void OnPressedSettings()
@@ -105,7 +114,15 @@ public class MenuManager : MonoBehaviour
 
     public void SetResolution()
     {
-        Screen.SetResolution(640, 480, Screen.fullScreen);
+
+        resolutionChoosen++;
+        if(resolutionChoosen > allResolutions.Length)
+        {
+            resolutionChoosen = 0;
+        }
+
+        Screen.SetResolution(allResolutions[resolutionChoosen].width, allResolutions[resolutionChoosen].height, Screen.fullScreen);
+        textResolution.text = allResolutions[resolutionChoosen].width.ToString() + "*" + allResolutions[resolutionChoosen].height.ToString();
     }
 
     public void AddVolume()
@@ -123,5 +140,9 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Maison");
     }
 
-     
+    public void BackToMain() 
+    {
+        menuTransition.TransitionToUpDowwn(false);
+        chooseScene = sceneEnum.mainMenu;
+    }
 }
