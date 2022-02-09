@@ -8,6 +8,7 @@ public class LdChangeScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneHandler.LoadScene(sceneName);
+        if (collision.CompareTag("Player"))
+            SceneHandler.LoadScene(sceneName);
     }
 }

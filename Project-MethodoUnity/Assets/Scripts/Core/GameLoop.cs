@@ -27,6 +27,12 @@ public class GameLoop : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Suicide"))
+        {
+            EndTime?.Invoke();
+            restingTime = ComputDur(loopDur);
+        }
+
         if (!isBreaking)
         {
             if (restingTime > 0.0f)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
 public class KickBody : MonoBehaviour, IKickable
@@ -11,6 +12,7 @@ public class KickBody : MonoBehaviour, IKickable
 
     [Header("data received")]
     public Vector2 kickDir = Vector2.up;
+    public UnityEvent kick;
 
     private void Awake()
     {
@@ -27,6 +29,7 @@ public class KickBody : MonoBehaviour, IKickable
     public void GetKicked(Vector2 dir, float power)
     {
         kickDir = dir;
+        kick?.Invoke();
         StopAllCoroutines();
         StartCoroutine(Kicked(power));
     }

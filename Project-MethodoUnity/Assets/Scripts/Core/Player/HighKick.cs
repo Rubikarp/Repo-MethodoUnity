@@ -20,10 +20,13 @@ public class HighKick : MonoBehaviour
         {
             for (int i = 0; i < collidersHit.Length; i++)
             {
-                IKickable kickTarget = collidersHit[i].GetComponent<IKickable>();
-                if (kickTarget != null)
+                if (!collidersHit[i].isTrigger) 
                 {
-                    kickTarget.GetKicked(kickDir, power);
+                    IKickable kickTarget = collidersHit[i].GetComponent<IKickable>();
+                    if (kickTarget != null)
+                    {
+                        kickTarget.GetKicked(kickDir, power);
+                    }
                 }
             }
         }
