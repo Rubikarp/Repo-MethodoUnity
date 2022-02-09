@@ -2758,7 +2758,7 @@ MonoBehaviour:
   mainCanvasMenu: {fileID: 785488319}
   OnFullScreen: {fileID: 1028674316}
   OffFullScreen: {fileID: 1889233446}
-  textVolume: {fileID: 168261120}
+  textVolume: {fileID: 167016780}
   textResolution: {fileID: 1057865261}
   mainAudio: {fileID: 24100000, guid: 3fc4915f3819b7d4b8f5a0b24d4bba40, type: 2}
 --- !u!1 &1508838899
@@ -3305,7 +3305,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 1932179506359551647, guid: df804f44a11239547a34f2dc7a9d955e, type: 3}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 1932179506359551647, guid: df804f44a11239547a34f2dc7a9d955e, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -3318,7 +3318,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2015758319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1460421078}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2015758319
 MonoBehaviour:
   m_ObjectHideFlags: 0
