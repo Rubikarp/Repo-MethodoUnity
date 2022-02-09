@@ -10,6 +10,13 @@ public class LDMouvElement : MonoBehaviour
 
     public void MoveToEnd(bool end)
     {
-        transform.DOLocalMove(end ? endPos : startPos, 1f).SetEase(Ease.InOutCirc);
+        if (end)
+        {
+            transform.DOLocalMove(endPos, 1f).SetEase(Ease.InOutCirc);
+        }
+        else
+        {
+            transform.DOLocalMove(startPos, 1f).SetEase(Ease.InOutCirc);
+        }
     }
 }

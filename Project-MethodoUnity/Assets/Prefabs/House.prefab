@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1113743889624751964}
   - component: {fileID: 1113743889624751952}
+  - component: {fileID: 1672809264694079120}
   - component: {fileID: 1113743889624751967}
   - component: {fileID: 1113743889624751966}
   - component: {fileID: 1113743889624751965}
+  - component: {fileID: 7857550629589405471}
   m_Layer: 0
   m_Name: House (1)
   m_TagString: Untagged
@@ -30,7 +32,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 4, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1113743890632987206}
   m_Father: {fileID: 1113743889816321607}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,6 +89,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1672809264694079120
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113743889624751963}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &1113743889624751967
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,6 +188,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3355863, y: 0.2515651}
   m_EdgeRadius: 0
+--- !u!114 &7857550629589405471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113743889624751963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8435df453d2fcf44eb7ef91402b8c6d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 1113743889816321607}
+  mouvPoint: []
 --- !u!1 &1113743889816321606
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +211,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1113743889816321607}
-  - component: {fileID: 3957032803532815739}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -193,22 +230,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1113743889624751964}
-  - {fileID: 1113743890632987206}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3957032803532815739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113743889816321606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8435df453d2fcf44eb7ef91402b8c6d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1113743890632987205
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +244,7 @@ GameObject:
   - component: {fileID: 1113743890632987206}
   - component: {fileID: 1113743890632987224}
   - component: {fileID: 1113743890632987207}
+  - component: {fileID: 7640520111789694467}
   m_Layer: 0
   m_Name: House (2)
   m_TagString: Untagged
@@ -235,11 +260,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113743890632987205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.375, z: 0}
+  m_LocalScale: {x: 0.33333334, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 1113743889816321607}
-  m_RootOrder: 1
+  m_Father: {fileID: 1113743889624751964}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1113743890632987224
 SpriteRenderer:
@@ -319,3 +344,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7640520111789694467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113743890632987205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb373684e78b464689278b17a29646d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Maison

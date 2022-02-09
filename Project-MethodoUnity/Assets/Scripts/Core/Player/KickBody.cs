@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
-public class KickBody : MonoBehaviour
+public class KickBody : MonoBehaviour, IKickable
 {
     private Transform self;
     private Rigidbody2D rb;
@@ -17,11 +17,6 @@ public class KickBody : MonoBehaviour
         self = transform;
         rb = self.GetComponent<Rigidbody2D>();
         coll = self.GetComponent<CircleCollider2D>();
-    }
-
-    void Update()
-    {
-        
     }
 
     [ContextMenu("kick right")]

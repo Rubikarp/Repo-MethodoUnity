@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class HighKick : MonoBehaviour
@@ -28,10 +27,5 @@ public class HighKick : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Handles.DrawWireDisc(transform.position + Vector3.one * range,Vector3.forward, size);
     }
 }
