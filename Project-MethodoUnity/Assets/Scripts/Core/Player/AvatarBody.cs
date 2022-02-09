@@ -23,7 +23,6 @@ public class AvatarBody : MonoBehaviour
 
     public void Die()
     {
-        Alive = false;
         mouv.Stop();
     }
 }
