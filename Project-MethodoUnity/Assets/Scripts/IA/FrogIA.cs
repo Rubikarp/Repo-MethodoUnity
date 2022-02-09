@@ -34,6 +34,16 @@ public class FrogIA : CoreIa
     IEnumerator Behavior(Transform player)
     {
         Vector3 dir = player.position- transform.position;
+
+        if (dir.x > 0)
+        {
+            selfRenderer.flipX = false;
+        }
+        else
+        {
+            selfRenderer.flipX = true;
+        }
+
         dir = dir.normalized;
         float dur = attDur;
         busy = true;
