@@ -19,6 +19,9 @@ public class Mouvement : MonoBehaviour, IKickable
     [SerializeField] private Animator selfAnimator;
     [SerializeField] private SpriteRenderer selfSpriteRenderer;
 
+    [HideInInspector]
+    public bool isBreaking = false;
+
     private void Awake()
     {
         self = transform;
@@ -28,12 +31,14 @@ public class Mouvement : MonoBehaviour, IKickable
 
     public void ReactToInput()
     {
-        rb.velocity = mouvDir * speed * Time.deltaTime;
+        if (!isBreaking)
+        {
+            rb.velocity = mouvDir * speed * Time.deltaTime;
 
-        selfAnimator.SetBool("IsRunning", rb.velocity.magnitude > 0.1f);
-        selfSpriteRenderer.flipX = rb.velocity.x > 0.1 ? false : selfSpriteRenderer.flipX;
-        selfSpriteRenderer.flipX = rb.velocity.x < -0.1 ? true : selfSpriteRenderer.flipX;
-
+            selfAnimator.SetBool("IsRunning", rb.velocity.magnitude > 0.1f);
+            selfSpriteRenderer.flipX = rb.velocity.x > 0.1 ? false : selfSpriteRenderer.flipX;
+            selfSpriteRenderer.flipX = rb.velocity.x < -0.1 ? true : selfSpriteRenderer.flipX;
+        }
 
     }
 

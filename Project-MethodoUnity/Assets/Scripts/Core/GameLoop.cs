@@ -12,6 +12,9 @@ public class GameLoop : MonoBehaviour
     [Header("Parameter")]
     public UnityEvent EndTime;
 
+    [HideInInspector]
+    public bool isBreaking = false;
+
     public static float ComputDur(Vector2Int duration)
     {
         return (float)duration.x * 60.0f + (float)duration.y;
@@ -24,14 +27,17 @@ public class GameLoop : MonoBehaviour
 
     void Update()
     {
-        if(restingTime > 0.0f)
+        if (!isBreaking)
         {
-            restingTime -= Time.deltaTime;
-        }
-        else
-        {
-            EndTime?.Invoke();
-            restingTime = ComputDur(loopDur);
+            if (restingTime > 0.0f)
+            {
+                restingTime -= Time.deltaTime;
+            }
+            else
+            {
+                EndTime?.Invoke();
+                restingTime = ComputDur(loopDur);
+            }
         }
     }
 }

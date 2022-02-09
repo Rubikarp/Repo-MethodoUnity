@@ -190,6 +190,7 @@ MonoBehaviour:
   mouvDir: {x: 0, y: 0}
   selfAnimator: {fileID: 3299354487223865703}
   selfSpriteRenderer: {fileID: 1937885034376106757}
+  isBreaking: 0
 --- !u!114 &2716984272232484220
 MonoBehaviour:
   m_ObjectHideFlags: 0
