@@ -10,6 +10,9 @@ public class FrogIA : CoreIa
     public float cooldown = 0.1f;
     public float attackSpeed = 2f;
 
+    [SerializeField]
+    private Animator selfAnimator;
+
     public override void PlayerDetected(Transform player)
     {
         if (busy) return;
@@ -34,6 +37,7 @@ public class FrogIA : CoreIa
         dir = dir.normalized;
         float dur = attDur;
         busy = true;
+        selfAnimator.SetTrigger("Jump");
         yield return null;
 
         do
@@ -44,6 +48,7 @@ public class FrogIA : CoreIa
         }
         while (dur > 0.0f);
 
+        
         body.velocity = Vector2.zero;
         yield return new WaitForSeconds(cooldown);
         busy = false;
