@@ -16,7 +16,14 @@ public class FeatureCaché : MonoBehaviour
 
     public IEnumerator Dash(Vector2 dir, float power)
     {
-        yield return null;
-        mouv.rb.velocity = dir * power * Time.fixedDeltaTime;
+        float dur = 0.3f;
+        do
+        {
+            dur -= Time.deltaTime;
+            mouv.rb.velocity = dir * power * Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
+
+        }
+        while (dur > 0);
     }
 }
