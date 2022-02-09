@@ -6,7 +6,7 @@ using UnityEngine;
 public class Mouvement : MonoBehaviour, IKickable
 {
     private Transform self;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private CircleCollider2D coll;
 
     [Header("Parameter")]
