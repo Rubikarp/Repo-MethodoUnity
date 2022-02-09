@@ -14,6 +14,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private PlayerController ctrlPlayer;
 
+    [SerializeField]
+    private GameObject settingsMenu;
+
     private KeyCode openMenuKey = KeyCode.Escape;
 
     // Start is called before the first frame update
@@ -48,6 +51,18 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         gameLoop.isBreaking = false;
         ctrlPlayer.ActualBody.mouv.isBreaking = false;
+    }
+
+    public void ActiveButton()
+    {
+        StartCoroutine(ButtonStill());
+    }
+
+    public IEnumerator ButtonStill()
+    {
+        settingsMenu.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        settingsMenu.SetActive(false);
     }
 
 }
