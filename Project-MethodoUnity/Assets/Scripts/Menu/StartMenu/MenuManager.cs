@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -40,6 +41,9 @@ public class MenuManager : MonoBehaviour
     public Resolution[] allResolutions;
 
     private bool isFullScreen = false;
+
+    public AudioMixer mainAudio;
+    private float musicVolume;
 
     void Start()
     {
@@ -127,12 +131,29 @@ public class MenuManager : MonoBehaviour
 
     public void AddVolume()
     {
+        musicVolume++;
+        mainAudio.SetFloat("Master", musicVolume != 0 ? Mathf.Log10(musicVolume) * 20 : -80);
 
+        if (musicVolume > 9)
+        {
+            musicVolume = 9;
+        }
+
+        textVolume.text = (musicVolume).ToString();
     }
 
     public void ReduceVolume()
     {
+        musicVolume--;
+        mainAudio.SetFloat("Master", musicVolume != 0 ? Mathf.Log10(musicVolume) * 20 : -80);
 
+        if(musicVolume < 0)
+        {
+            musicVolume = 0;
+        }
+
+        textVolume.text = (musicVolume).ToString();
+        Debug.Log(musicVolume);
     }
 
     public void StartGame()
