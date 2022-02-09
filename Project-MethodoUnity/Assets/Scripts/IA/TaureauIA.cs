@@ -5,31 +5,54 @@ using UnityEngine;
 public class TaureauIA : CoreIa
 {
     public bool busy = false;
+    public bool stun = false;
 
-    public float attDur = 0.5f;
-    public float attackSpeed = 6f;
+    public float cooldown = 0.1f;
+    public float attackSpeed = 2f;
 
     public override void PlayerDetected(Transform player)
     {
-        if (busy) return;
+        if (busy || stun) return;
+        if (!player.GetComponent<AvatarBody>().Alive) return;
 
         StartCoroutine(Behavior(player));
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        busy = false;
+    }
+
+    public void KickStop()
+    {
+        StopAllCoroutines();
+        Invoke("Dizzy", 0.3f);
+    }
+
+    public void Dizzy()
+    {
+        busy = false;
+        stun = false;
+    }
+
+    
+
     IEnumerator Behavior(Transform player)
     {
-        //transform.LookAt(player);
         Vector3 dir = player.position - transform.position;
-        float dur = attDur;
+        dir = dir.normalized;
+        busy = true;
+        yield return new WaitForSeconds(0.3f);
+
         do
         {
-            dur -= Time.fixedDeltaTime;
             body.velocity = dir * attackSpeed * Time.fixedDeltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
-        while (dur > 0.0f);
-
+        while (busy);
+        stun = true;
         body.velocity = Vector2.zero;
-        yield return null;
+        yield return new WaitForSeconds(cooldown);
+        stun = false;
     }
 }

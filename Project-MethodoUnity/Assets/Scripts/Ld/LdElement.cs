@@ -18,13 +18,13 @@ public class LdElement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (useCase.HasFlag(EventCondition.enter))
+        if (useCase.HasFlag(EventCondition.enter) && !collision.isTrigger)
             enter?.Invoke();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (useCase.HasFlag(EventCondition.exit))
+        if (useCase.HasFlag(EventCondition.exit) && !collision.isTrigger)
             exit?.Invoke();
     }
 }
